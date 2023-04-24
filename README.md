@@ -5,12 +5,12 @@ Note:
 1. The version difference between ifort and abaqus should not be too large, otherwise there will be compatibility problems
 2. To successfully follow this tutorial, you need to have root access (sudoers)
 
-## - References:
+## References:
 - https://github.com/franaudo/abaqus-ubuntu
 
 - https://www.intel.com/content/www/us/en/docs/oneapi/installation-guide-linux/2023-0/apt.html
 
-## - Install prerequisites
+## 1. Install prerequisites
 The standard Ubuntu release might not have one or more of the following libraries needed by Abaqus:
 	libjpeg
 	libstdc++ 4.7
@@ -24,5 +24,8 @@ The standard Ubuntu release might not have one or more of the following librarie
 To install them open a terminal and execute the following command:
 ```
 sudo apt update
+sudo apt upgrade
+sudo apt autoremove
 sudo apt install csh tcsh ksh gcc g++ gfortran libstdc++5 build-essential make libjpeg62 libmotif-dev
 ```
+** please fix all the errors reported in the above processes. **
