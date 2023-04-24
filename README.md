@@ -38,19 +38,20 @@ sudo apt install csh tcsh ksh gcc g++ gfortran libstdc++5 build-essential make l
 > ```
 ## 2. Install ifort
 More detailed information, please visit: https://www.intel.com/content/www/us/en/docs/oneapi/installation-guide-linux/2023-0/apt.html
-### Download the key to system keyring:
+**Download the key to system keyring:**
 ```
 wget -O- https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB \
 | gpg --dearmor | sudo tee /usr/share/keyrings/oneapi-archive-keyring.gpg > /dev/null
 ```
-### Add signed entry to apt sources and configure the APT client to use Intel repository:
+**Add signed entry to apt sources and configure the APT client to use Intel repository:**
 ```
 echo "deb [signed-by=/usr/share/keyrings/oneapi-archive-keyring.gpg] https://apt.repos.intel.com/oneapi all main" | sudo tee /etc/apt/sources.list.d/oneAPI.list
 ```
-### Update the package lists:
+**Update the package lists:**
 ```
 sudo apt update
 ```
-
+**Install the ifort package:**
+```sudo apt-get install intel-oneapi-ifort```
 
 
