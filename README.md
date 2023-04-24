@@ -52,6 +52,19 @@ echo "deb [signed-by=/usr/share/keyrings/oneapi-archive-keyring.gpg] https://apt
 sudo apt update
 ```
 **Install the ifort package:**
-```sudo apt-get install intel-oneapi-ifort```
-
-
+```
+sudo apt-get install intel-oneapi-ifort
+```
+If you verify the installation now by running `ifort -v`, you will find there is no command names `ifort`. That is because you haven't initialized the package. To initializing ifort, you need to run
+```
+source /opt/intel/oneapi/setvars.sh
+```
+And then you can verify the installation
+```
+ifort -v
+```
+**Add the initialization step into `.bashrc`**
+add `source /opt/intel/oneapi/setvars.sh` to your `.bashrc` by 
+```
+nano ~/.bashrc
+```
