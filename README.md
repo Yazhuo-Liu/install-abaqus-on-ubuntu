@@ -65,11 +65,17 @@ ifort -v
 ```
 **Add the initialization step into `.bashrc`**
 
-add `source /opt/intel/oneapi/setvars.sh` to your `.bashrc` file through:
+Add `source /opt/intel/oneapi/setvars.sh` to your `.bashrc` file through:
 ```
 nano ~/.bashrc
 ```
-if you want to initialize ifort for all user, adding `source /opt/intel/oneapi/setvars.sh` to `profile` file through
+If you want to initialize ifort for all user, adding `source /opt/intel/oneapi/setvars.sh` to `profile` file through
 ```
 sudo nano /etc/profile
+```
+Then reconnect or restart the terminal.
+Or source the `.bashrc` and `profile` file
+```
+source ~/.bashrc
+source /etc/profile
 ```
