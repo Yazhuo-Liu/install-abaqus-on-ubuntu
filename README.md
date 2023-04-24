@@ -11,15 +11,15 @@ Note:
 
 ## 1. Install prerequisites
 The standard Ubuntu release might not have one or more of the following libraries needed by Abaqus:
--libjpeg
--libstdc++
--openmotif
--libgomp
--libXm4
--ksh
--redhat-lsb-core
--lsb-release
--libpng
+- libjpeg
+- libstdc++
+- openmotif
+- libgomp
+- libXm4
+- ksh
+- redhat-lsb-core
+- lsb-release
+- libpng
 To install them open a terminal and execute the following command:
 ```
 sudo apt update
