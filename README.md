@@ -6,8 +6,9 @@ Note:
 2. To successfully follow this tutorial, you need to have root access (sudoers)
 
 ## 0 References:
-https://github.com/franaudo/abaqus-ubuntu
-https://www.intel.com/content/www/us/en/docs/oneapi/installation-guide-linux/2023-0/apt.html
+- https://github.com/franaudo/abaqus-ubuntu
+
+- https://www.intel.com/content/www/us/en/docs/oneapi/installation-guide-linux/2023-0/apt.html
 
 ## 1 Install prerequisites
 The standard Ubuntu release might not have one or more of the following libraries needed by Abaqus:
@@ -21,5 +22,7 @@ The standard Ubuntu release might not have one or more of the following librarie
 	lsb-release-2.0
 	libpng12-0
 To install them open a terminal and execute the following command:
-`sudo apt update`
-`sudo apt install csh tcsh ksh gcc g++ gfortran libstdc++5 build-essential make libjpeg62 libmotif-dev`
+```
+sudo apt update
+sudo apt install csh tcsh ksh gcc g++ gfortran libstdc++5 build-essential make libjpeg62 libmotif-dev
+```
