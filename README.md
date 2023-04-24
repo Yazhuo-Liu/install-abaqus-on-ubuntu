@@ -30,3 +30,9 @@ sudo apt autoremove
 sudo apt install csh tcsh ksh gcc g++ gfortran libstdc++5 build-essential make libjpeg62 libmotif-dev
 ```
 **please fix all the errors reported in the above processes.**
+
+> According to _franaudo_, if there are errors try to install the ones that failed, using the synaptic package manager. To install it, run:
+```
+sudo apt-get update
+sudo apt-get install synaptic
+```
