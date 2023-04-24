@@ -1,5 +1,5 @@
 # Install-ABAQUS-on-Ubuntu
-This is a tutorial of installing abaqus2023 on ubuntu 20.04/22.04 and link with ifort for user subroutine.
+This is a tutorial of installing ABAQUS2023 and ifort2021 on ubuntu 22.04 and link them for user subroutine. This guide should also work for Abaqus 2021 (changing accordingly file names and paths) and Ubuntu 18.04 till 22.04, although I haven't tested it.
 
 Note: 
 1. The version difference between ifort and abaqus should not be too large, otherwise there will be compatibility problems
@@ -79,3 +79,4 @@ Or source the `.bashrc` and `profile` file
 source ~/.bashrc
 source /etc/profile
 ```
+Now you finished the installation of ifort
