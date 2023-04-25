@@ -83,6 +83,11 @@ source /etc/profile
 Now you finished the installation of ifort
 ## 3. Install ABAQUS Products
 Note that ABAQUS only officially supports the CentOS and RedHat system, and trying to install Abaqus on Ubuntu will result in an error. In order to skip system detection, we need to modify all the `linux.sh` files in the Abaqus installation folders into the following contant:
+
+**Note the changes:** 
+- the release version was forced to be "CentOS"
+- disable the prerequisites checking.
+
 ```
   DSY_LIBPATH_VARNAME=LD_LIBRARY_PATH
 
