@@ -24,7 +24,7 @@ The standard Ubuntu release might not have one or more of the following librarie
 - libpng
 
 To install them open a terminal and execute the following command:
-```
+```bash
 sudo apt update
 sudo apt upgrade
 sudo apt autoremove
@@ -33,50 +33,50 @@ sudo apt install csh tcsh ksh gcc g++ gfortran libstdc++5 build-essential make l
 **please fix all the errors reported in the above processes.**
 
 > According to _franaudo_, if there are errors try to install the ones that failed, using the synaptic package manager. To install it, run:
-> ```
+> ```bash
 > sudo apt-get update
 > sudo apt-get install synaptic
 > ```
 ## 2. Install ifort
 More detailed information, please visit: https://www.intel.com/content/www/us/en/docs/oneapi/installation-guide-linux/2023-0/apt.html
 **Download the key to system keyring:**
-```
+```bash
 wget -O- https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB \
 | gpg --dearmor | sudo tee /usr/share/keyrings/oneapi-archive-keyring.gpg > /dev/null
 ```
 **Add signed entry to apt sources and configure the APT client to use Intel repository:**
-```
+```bash
 echo "deb [signed-by=/usr/share/keyrings/oneapi-archive-keyring.gpg] https://apt.repos.intel.com/oneapi all main" | sudo tee /etc/apt/sources.list.d/oneAPI.list
 ```
 **Update the package lists:**
-```
+```bash
 sudo apt update
 ```
 **Install the ifort package:**
-```
+```bash
 sudo apt-get install intel-oneapi-ifort
 ```
 If you verify the installation now by running `ifort -v`, you will find there is no command names `ifort`. That is because you haven't initialized the package. To initializing ifort, you need to run
-```
+```bash
 source /opt/intel/oneapi/setvars.sh
 ```
 And then you can verify the installation
-```
+```bash
 ifort -v
 ```
 **Add the initialization step into `.bashrc`**
 
 Add `source /opt/intel/oneapi/setvars.sh` to your `.bashrc` file through:
-```
+```bash
 nano ~/.bashrc
 ```
 If you want to initialize ifort for all user, adding `source /opt/intel/oneapi/setvars.sh` to `profile` file through
-```
+```bash
 sudo nano /etc/profile
 ```
 Then reconnect or restart the terminal.
 Or source the `.bashrc` and `profile` file
-```
+```bash
 source ~/.bashrc
 source /etc/profile
 ```
@@ -88,7 +88,7 @@ Note that ABAQUS only officially supports the CentOS and RedHat system, and tryi
 - the release version was forced to be "CentOS"
 - disable the prerequisites checking.
 
-```
+``` bash
   DSY_LIBPATH_VARNAME=LD_LIBRARY_PATH
 
   which lsb_release
