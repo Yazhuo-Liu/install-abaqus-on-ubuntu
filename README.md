@@ -10,6 +10,7 @@ Note:
 - https://www.intel.com/content/www/us/en/docs/oneapi/installation-guide-linux/2023-0/apt.html
 - https://gatech.service-now.com/home?id=kb_article_view&sysparm_article=KB0040327
 - https://github.com/Yazhuo-Liu/install-abaqus-on-ubuntu/blob/main/SIMULIA_Established_Products_Installation_Guide.pdf
+- https://github.com/Yazhuo-Liu/install-abaqus-on-ubuntu/blob/main/SIMULIA_Installation_Instructions.pdf
 
 ## 1. Install prerequisites
 The standard Ubuntu release might not have one or more of the following libraries needed by Abaqus:
