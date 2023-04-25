@@ -82,11 +82,12 @@ source /etc/profile
 ```
 Now you finished the installation of ifort
 ## 3. Install ABAQUS Products
+### Bypass the system check
 Note that ABAQUS only officially supports the CentOS and RedHat system, and trying to install Abaqus on Ubuntu will result in an error. In order to skip system detection, we need to modify all the `linux.sh` files in the Abaqus installation folders into the following contant:
 
 **Note the changes:** 
-- the release version was forced to be "CentOS"
-- disable the prerequisites checking.
+- Force the release version of LinuxOS to be "CentOS"
+- Disable the prerequisites checking.
 
 ``` bash
   DSY_LIBPATH_VARNAME=LD_LIBRARY_PATH
@@ -97,7 +98,7 @@ Note that ABAQUS only officially supports the CentOS and RedHat system, and tryi
     exit 12
   fi
 
-  DSY_OS_Release="CentOS" # Override system information
+  DSY_OS_Release="CentOS" # Override system release
   echo "DSY_OS_Release=\""${DSY_OS_Release}"\""
   export DSY_OS_Release=${DSY_OS_Release}
   export DSY_Skip_CheckPrereq=1 # Cancel the prerequisite check
@@ -119,3 +120,37 @@ Note that ABAQUS only officially supports the CentOS and RedHat system, and tryi
           exit 8;;
   esac
 ```
+### Run Setup
+The setup of Abaqus requires a `bash` instead of a `dash` shell, whereas the latter is the default in Ubuntu. We need to temporaryly symlink the shell command to `bash`.
+```bash
+sudo ln -sf bash /bin/sh
+```
+Then we can continue the installation.
+```bash
+cd <download_dir>/<media_name>/1
+sudo ./StartGUI.sh
+```
+follow the guidence provided by Georgia Tech IT Services & Support () and use standard locations for everything. 
+**When it asks for the license server, select `Skip licensing configuration` (otherwise it will cause an error).**
+
+The Abaqus will be installed at
+```
+/usr/SIMULIA/EstProducts/2023
+/var/DassaultSystems/SIMULIA/Commands
+/var/DassaultSystems/SIMULIA/CAE/plugins/2023
+```
+Now the installation is complete, and we need to revert the standard shell back to `dash`:
+```bash
+sudo ln -sf dash /bin/sh
+```
+## 4. Configure Abaqus for a FLEXnet License Server
+Edit the following enviroment customization file in the Abaqus installation.
+``` bash
+sudo nano /usr/SIMULIA/EstProducts/2023/linux_a64/SMA/site/custom_v6.env
+```
+In the `custom_v6.env` file, add the following parameters:
+```
+license_server_type=FLEXNET
+abaquslm_license_file="*port@license_server_hostname*"
+```
+
