@@ -132,7 +132,7 @@ Then we can continue the installation.
 cd <download_dir>/<media_name>/1
 sudo ./StartGUI.sh
 ```
-follow the guidence provided by Georgia Tech IT Services & Support () and use standard locations for everything. 
+follow the guidence provided by Georgia Tech IT Services & Support (https://github.com/Yazhuo-Liu/install-abaqus-on-ubuntu/blob/main/SIMULIA_Installation_Instructions.pdf) and use standard locations for everything. 
 **When it asks for the license server, select `Skip licensing configuration` (otherwise it will cause an error).**
 
 The Abaqus will be installed at
