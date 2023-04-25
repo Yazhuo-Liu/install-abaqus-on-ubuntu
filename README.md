@@ -151,6 +151,19 @@ sudo nano /usr/SIMULIA/EstProducts/2023/linux_a64/SMA/site/custom_v6.env
 In the `custom_v6.env` file, add the following parameters:
 ```
 license_server_type=FLEXNET
-abaquslm_license_file="*port@license_server_hostname*"
+abaquslm_license_file="port@license_server_hostname"
 ```
 
+## 5. Make ABAQUS command available for all users
+Creating the symlink in `/usr/bin` dir to make everyone access to the software.
+```bash
+sudo ln /var/DassaultSystems/SIMULIA/Commands/abq2023 /usr/bin/abaqus2023
+```
+
+## 6. Check everything
+Since we already initialize ifort in our `.bashrc`, the ifort will be automatically linked to ABAQUS.
+
+Now we can start ABAQUS CAE in the terminal. If there is any warning regarding OpenGL in the terminal during start, simply run ABAQUS with `-mesa` parameter:
+```bash
+abaqus2023 cae -mesa
+```
