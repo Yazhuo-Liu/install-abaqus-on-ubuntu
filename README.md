@@ -82,3 +82,35 @@ source /etc/profile
 ```
 Now you finished the installation of ifort
 ## 3. Install ABAQUS Products
+Note that ABAQUS only officially supports the CentOS and RedHat system, and trying to install Abaqus on Ubuntu will result in an error. In order to skip system detection, we need to modify all the `linux.sh` files in the Abaqus installation folders into the following contant:
+```
+  DSY_LIBPATH_VARNAME=LD_LIBRARY_PATH
+
+  which lsb_release
+  if [[ $? -ne 0 ]] ; then
+    echo "lsb_release is not found: check in the PDIR the list of installed packages for servers validation."
+    exit 12
+  fi
+
+  DSY_OS_Release="CentOS" # Override system information
+  echo "DSY_OS_Release=\""${DSY_OS_Release}"\""
+  export DSY_OS_Release=${DSY_OS_Release}
+  export DSY_Skip_CheckPrereq=1 # Cancel the prerequisite check
+
+  if [[ -n ${DSY_Force_OS} ]]; then
+    DSY_OS=${DSY_Force_OS}
+    echo "DSY_Force_OS=\""${DSY_Force_OS}"\", use it for DSY_OS"
+    return
+  fi
+
+  case ${DSY_OS_Release} in
+      "RedHatEnterpriseServer"|"RedHatEnterpriseClient"|"RedHatEnterpriseWorkstation"|"CentOS")
+          DSY_OS=linux_a64;;
+      "SUSELINUX"|"SUSE")
+          DSY_OS=linux_a64;;
+      *)
+          echo "Unknown linux release \""${DSY_OS_Release}"\""
+          echo "exit 8"
+          exit 8;;
+  esac
+```
