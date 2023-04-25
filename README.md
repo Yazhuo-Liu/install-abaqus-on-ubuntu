@@ -8,6 +8,7 @@ Note:
 ## References:
 - https://github.com/franaudo/abaqus-ubuntu
 - https://www.intel.com/content/www/us/en/docs/oneapi/installation-guide-linux/2023-0/apt.html
+- https://gatech.service-now.com/home?id=kb_article_view&sysparm_article=KB0040327
 - https://github.com/Yazhuo-Liu/install-abaqus-on-ubuntu/blob/main/SIMULIA_Established_Products_Installation_Guide.pdf
 
 ## 1. Install prerequisites
