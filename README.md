@@ -8,6 +8,7 @@ Note:
 ## References:
 - https://github.com/franaudo/abaqus-ubuntu
 - https://www.intel.com/content/www/us/en/docs/oneapi/installation-guide-linux/2023-0/apt.html
+- https://github.com/Yazhuo-Liu/install-abaqus-on-ubuntu/blob/main/SIMULIA_Established_Products_Installation_Guide.pdf
 
 ## 1. Install prerequisites
 The standard Ubuntu release might not have one or more of the following libraries needed by Abaqus:
@@ -80,3 +81,4 @@ source ~/.bashrc
 source /etc/profile
 ```
 Now you finished the installation of ifort
+## 3. Install ABAQUS Products
