@@ -160,7 +160,7 @@ abaquslm_license_file="port@license_server_hostname"
 ## 5. Make ABAQUS command available for all users
 Creating the symlink in `/usr/bin` dir to make everyone access to the software.
 ```bash
-sudo ln /var/DassaultSystems/SIMULIA/Commands/abq2023 /usr/bin/abaqus2023
+sudo ln -s /var/DassaultSystems/SIMULIA/Commands/abq2023 /usr/bin/abaqus2023
 ```
 
 ## 6. Check everything
