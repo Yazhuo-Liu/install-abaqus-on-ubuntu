@@ -46,7 +46,16 @@ sudo apt install csh tcsh ksh gcc g++ gfortran libstdc++5 build-essential make l
 > sudo apt-get update
 > sudo apt-get install synaptic
 > ```
-## 2. Install ifort
+
+## 2.0 Install a specific version of ifort only to avoid various problems caused by Intel's tricks
+The installation package is [here](/l_fortran-compiler_p_2024.2.1.80.sh)
+Just run
+```bash
+chmod +x l_fortran-compiler_p_2024.2.1.80.sh
+sudo ./l_fortran-compiler_p_2024.2.1.80.sh
+```
+
+## 2. Install the newest version of ifort 
 More detailed information, please visit: https://www.intel.com/content/www/us/en/docs/oneapi/installation-guide-linux/2023-0/apt.html
 
 **Download the key to system keyring:**
@@ -179,6 +188,7 @@ copy the path
 ```bash
 sudo ln -s /path/to/ifx /usr/local/bin/ifort
 ```
+!!!!! After doing this symbolic link, there is no need to run `source /opt/intel/oneapi/setvars.sh` in your `.bashrc`
 
 ## 7. Check everything
 Since we already initialize ifort in our `.bashrc`, the ifort will be automatically linked to ABAQUS.
