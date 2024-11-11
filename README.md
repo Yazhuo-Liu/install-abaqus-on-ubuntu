@@ -57,6 +57,8 @@ sudo ./l_fortran-compiler_p_2024.2.1.80.sh
 ```
 You will finish the installation of ifort.
 
+After installation, add `-diag-disable=10448` to `ifort.cfg` file to turn off Intel's warning that ifort is no longer supported. The default path for this file is `/opt/intel/oneapi/compiler/2024.2/bin/ifort.cfg`
+
 ## 2. Install the newest version of ifort 
 More detailed information, please visit: https://www.intel.com/content/www/us/en/docs/oneapi/installation-guide-linux/2023-0/apt.html
 
