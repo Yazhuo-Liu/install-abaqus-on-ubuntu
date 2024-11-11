@@ -201,3 +201,13 @@ Now we can start ABAQUS CAE in the terminal. If there is any warning regarding O
 ```bash
 abaqus2023 cae -mesa
 ```
+## 8. (Optional) Disable update check for Intel Fortran compiler
+Disable the Repository to avoid any update of Intel Fortran compiler (for both `ifort` and `ifx`).
+
+Modify the oneAPI repository list file by adding a # at the beginning of the line. This will comment it out, making apt update skip it without removing the repository configuration entirely.
+```bash
+sudo sed -i 's/^deb/#deb/' /etc/apt/sources.list.d/oneAPI.list
+```
+
+
+
