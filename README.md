@@ -3,9 +3,9 @@ This is a tutorial of installing ABAQUS2023 and ifort2021 on ubuntu 22.04 and li
 
 ------------------------------
 Update Nov. 11, 2024
-- After Intel updated OneAPI, 'ifort' no longer exists, and it is replaced by 'ifx'. Although 'ifx' is fully compatible with the previous 'ifort', it is necessary to create a symbolic link at the end to let 'ifort' point to 'ifx', since the default fortran compiler name of abaqus is ifort.
-- This tutorial still works well, just change all 'ifort' to 'ifx'.
-- As a service provider, **Intel's behavior is rude, brutal, and unreasonable**. Since 'ifx' is fully compatible with 'ifort', there is no need to change the name of the compiler. Intel's behavior is irresponsible to all users, and all users need to bear the cost of the name change.
+- After Intel updated OneAPI, `ifort` no longer exists, and it is replaced by `ifx`. Although `ifx` is fully compatible with the previous `ifort`, it is necessary to create a symbolic link at the end to let `ifort` point to `ifx`, since the default fortran compiler name of abaqus is ifort.
+- This tutorial still works well, just change all `ifort` to `ifx`.
+- As a service provider, **Intel's behavior is rude, brutal, and unreasonable**. Since `ifx` is fully compatible with `ifort`, there is no need to change the name of the compiler. Intel's behavior is irresponsible to all users, and all users need to bear the cost of the name change.
 -------------------------------
 
 Note: 
@@ -171,7 +171,7 @@ sudo ln -s /var/DassaultSystems/SIMULIA/Commands/abq2023 /usr/bin/abq2023
 ```
 
 ## 6. If the Intel OneAPI version you installed does not include ifx, and your abaqus prompts that you cannot find ifort, please create a symbolic link
-Find the path to 'ifx':
+Find the path to `ifx`:
 ```bash
 which ifx
 ```
