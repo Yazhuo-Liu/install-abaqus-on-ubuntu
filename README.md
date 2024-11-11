@@ -48,12 +48,14 @@ sudo apt install csh tcsh ksh gcc g++ gfortran libstdc++5 build-essential make l
 > ```
 
 ## 2.0 Install a specific version of ifort only to avoid various problems caused by Intel's tricks
-The installation package is [here](/l_fortran-compiler_p_2024.2.1.80.sh)
+The installation package of ifort version 2024.2 can be downloaded [here](/l_fortran-compiler_p_2024.2.1.80.sh)
+
 Just run
 ```bash
 chmod +x l_fortran-compiler_p_2024.2.1.80.sh
 sudo ./l_fortran-compiler_p_2024.2.1.80.sh
 ```
+You will finish the installation of ifort.
 
 ## 2. Install the newest version of ifort 
 More detailed information, please visit: https://www.intel.com/content/www/us/en/docs/oneapi/installation-guide-linux/2023-0/apt.html
