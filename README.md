@@ -1,6 +1,13 @@
 # Install-ABAQUS-on-Ubuntu
 This is a tutorial of installing ABAQUS2023 and ifort2021 on ubuntu 22.04 and link them for user subroutine. This guide should also work for Abaqus 2021 (changing accordingly file names and paths) and Ubuntu 18.04 till 22.04, although I haven't tested it.
 
+------------------------------
+Update Nov. 11, 2024
+- After Intel updated OneAPI, 'ifort' no longer exists, and it is replaced by 'ifx'. Although 'ifx' is fully compatible with the previous 'ifort', it is necessary to create a symbolic link at the end to let 'ifort' point to 'ifx', since the default fortran compiler name of abaqus is ifort.
+- This tutorial still works well, just change all 'ifort' to 'ifx'.
+- As a service provider, Intel's behavior is **rude**, **brutal**, and **unreasonable**. Since 'ifx' is fully compatible with 'ifort', there is no need to change the name of the compiler. Intel's behavior is irresponsible to all users, and all users need to bear the cost of the name change.
+-------------------------------
+
 Note: 
 1. The version difference between ifort and abaqus should not be too large, otherwise there will be compatibility problems
 2. To successfully follow this tutorial, you need to have root access (sudoers)
@@ -160,10 +167,20 @@ abaquslm_license_file="port@license_server_hostname"
 ## 5. Make ABAQUS command available for all users
 Creating the symlink in `/usr/bin` dir to make everyone access to the software.
 ```bash
-sudo ln -s /var/DassaultSystems/SIMULIA/Commands/abq2023 /usr/bin/abaqus2023
+sudo ln -s /var/DassaultSystems/SIMULIA/Commands/abq2023 /usr/bin/abq2023
 ```
 
-## 6. Check everything
+## 6. If the Intel OneAPI version you installed does not include ifx, and your abaqus prompts that you cannot find ifort, please create a symbolic link
+Find the path to 'ifx':
+```bash
+which ifx
+```
+copy the path
+```bash
+sudo ln -s /path/to/ifx /usr/local/bin/ifort
+```
+
+## 7. Check everything
 Since we already initialize ifort in our `.bashrc`, the ifort will be automatically linked to ABAQUS.
 
 Now we can start ABAQUS CAE in the terminal. If there is any warning regarding OpenGL in the terminal during start, simply run ABAQUS with `-mesa` parameter:
