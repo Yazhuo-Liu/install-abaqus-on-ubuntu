@@ -175,6 +175,8 @@ In the `custom_v6.env` file, add the following parameters:
 ```
 license_server_type=FLEXNET
 abaquslm_license_file="port@license_server_hostname"
+# for Gatech
+abaquslm_license_file="2002@abaquslic.ecs.gatech.edu"
 ```
 
 ## 5. Make ABAQUS command available for all users
