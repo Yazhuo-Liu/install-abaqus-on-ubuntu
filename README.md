@@ -59,6 +59,19 @@ You will finish the installation of ifort.
 
 After installation, add `-diag-disable=10448` to `ifort.cfg` file to turn off Intel's warning that ifort is no longer supported. The default path for this file is `/opt/intel/oneapi/compiler/2024.2/bin/ifort.cfg`
 
+*Additionally*, to use Intel oneAPI MKL Library, you need to install both *Intel oneAPI BaseKit* and *Intel oneAPI HPCKit* then modify the `lnx86_64.env` file (located at `/usr/SIMULIA/EstProducts/2023/linux_a64/SMA/site/lnx86_64.env`) and add *-qmkl* command into the *link_sl*
+```
+ link_sl = [fortCmd,
+               '-V',
+               '-cxxlib', '-fPIC', '-threads', '-shared','-Wl,--add-needed',
+               '%E', '-Wl,-soname,%U', '-o', '%U', '%F', '%A', '%L', '%B', '-parallel',
+                # add MKL
+               '-qmkl',
+                # end
+               '-Wl,-Bdynamic', '-shared-intel']
+```
+
+
 ## 2. Install the newest version of ifort 
 More detailed information, please visit: https://www.intel.com/content/www/us/en/docs/oneapi/installation-guide-linux/2023-0/apt.html
 
